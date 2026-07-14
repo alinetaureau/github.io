@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-61VN6WC6R4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-61VN6WC6R4');
+</script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Aline Taureau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-about">
+
+    <aside class="sidebar">
+        <!-- La barre de distorsion pour faire comme sur la galerie -->
+        <div class="glass-distortion-bar"></div>
+        
+        <div class="brand-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.svg" alt="Aline Taureau" class="logo">
+            </a>
+        </div>
+
+        <!-- Les vrais liens vers les réseaux et contact -->
+        <nav class="social-nav">
+            <a href="https://www.instagram.com/alinetaureau/" target="_blank" rel="noopener noreferrer"><img src="assets/icon-insta.svg" alt="Instagram" class="nav-icon"></a>
+            <a href="https://alinetaureau.shop" target="_blank" rel="noopener noreferrer"><img src="assets/icon-shop.svg" alt="Boutique" class="nav-icon"></a>
+            <a href="about.html"><img src="assets/icon-contact.svg" alt="Contact" class="nav-icon"></a>
+        </nav>
+    </aside>
+
+    <div class="about-container">
+        <div class="about-grid">
+            
+            <!-- COLONNE 1 : Texte principal -->
+            <div class="about-col">
+                <div class="title-with-lang">
+                    <h2 class="about-title">ABOUT</h2>
+                    <a href="about.html" class="lang-toggle">FR</a>
+                </div>
+                
+                <h3>Digital Artist & Visual Designer</h3>
+                <br>
+                <p class="about-text newspaper-text"> 
+                    Specialized in streetwear, alternative aesthetics, and vintage universes, I create magnetic, tailor-made hybrid visuals. My creative process might feel like magic, but it leaves absolutely nothing to chance. I start with a raw sketch and bring it to life through digital painting, the raw power of AI, or a seamless blend of both. I edit every single detail to perfection to hit the exact mood you are aiming for.
+                </p>
+                
+                <h3 class="mt-20">The Creative Power of AI meets Uncompromising Technical Rigor</h3>
+                <br>
+                <p class="about-text newspaper-text">
+                    I combine this creative firepower with strict technical discipline. My real asset? I cut my teeth in the demanding world of physical production. After years of designing and prepping files for apparel printing (multi-layer flocking, screen printing) and physical goods (books, magazines, packaging, signage), I know how things are built.
+                    <br><br>
+                    To put it simply: I don't just hand over a "pretty picture." I deliver high-impact visuals, flawlessly balanced typography, and technically bulletproof files (Print & Web). I secure your entire graphic production chain so you never get a nasty surprise at the print shop.
+                </p>
+            </div>
+
+            <!-- COLONNE 2 : Photo et suite du texte -->
+            <div class="about-col">
+                <div class="profile-interactive-container gallery-item" data-images='["content/profil/profil2.jpg", "content/profil/profil1.jpg"]'>
+                    <img src="content/profil/profil2.jpg" class="profile-pic" alt="Aline Taureau">
+                </div>
+                
+                <h3 class="mt-20">No Filters, Just Ruthless Efficiency</h3>
+                <br>
+                <p class="about-text newspaper-text">
+                    This drive to pilot the creative process from A to Z—and to work without filters—is exactly why I went freelance. For the magic to happen fast, I like things crystal clear from day one. You come to me with a defined need (poster, logo, product), a global direction (illustration, photo-realism, bold typography, AI video), your target audience, and a few inspirations or just a vibe. You hand me the raw material, I translate your vision, and I deliver.
+                    <br><br>
+                    Whether you need a vibrant illustration, a striking book cover, bold merch graphics, or product design modeling, I answer the call. Based in Toulouse, South of France, I collaborate 100% remotely with agencies, brands, and independent creators.
+                </p>
+            </div>
+
+            <!-- COLONNE 3 : Contact -->
+            <div class="about-col">
+                <h2 class="about-title">CONTACT</h2>
+                
+                <form action="https://formspree.io/f/xkolqqjy" method="POST" class="contact-form">
+                    
+                    <label for="email" class="form-label">Your email :</label>
+                    <input type="email" id="email" name="email" required class="contact-input">
+
+                    <label for="message" class="form-label">Your project :</label>
+                    <textarea id="message" name="message" maxlength="2500" required class="contact-textarea"></textarea>
+                    
+                    <div class="btn-container">
+                        <button type="submit" class="contact-btn">SEND</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

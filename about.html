@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-61VN6WC6R4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-61VN6WC6R4');
+</script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - Aline Taureau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-about">
+
+    <aside class="sidebar">
+        <!-- La barre de distorsion pour faire comme sur la galerie -->
+        <div class="glass-distortion-bar"></div>
+        
+        <div class="brand-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.svg" alt="Aline Taureau" class="logo">
+            </a>
+        </div>
+
+        <!-- Les vrais liens vers les réseaux et contact -->
+        <nav class="social-nav">
+            <a href="https://www.instagram.com/alinetaureau/" target="_blank" rel="noopener noreferrer"><img src="assets/icon-insta.svg" alt="Instagram" class="nav-icon"></a>
+            <a href="https://alinetaureau.shop" target="_blank" rel="noopener noreferrer"><img src="assets/icon-shop.svg" alt="Boutique" class="nav-icon"></a>
+            <a href="about.html"><img src="assets/icon-contact.svg" alt="Contact" class="nav-icon"></a>
+        </nav>
+    </aside>
+
+    <div class="about-container">
+        <div class="about-grid">
+            
+            <!-- COLONNE 1 : Texte principal -->
+            <div class="about-col">
+                <div class="title-with-lang">
+                    <h2 class="about-title">À PROPOS</h2>
+                    <a href="about-en.html" class="lang-toggle">EN</a>
+                </div>
+                
+                <h3>Digital Artist & Visual Designer</h3>
+                <br>
+                <p class="about-text newspaper-text"> 
+                    Spécialisée dans le streetwear, l'esthétique alternative et l'univers vintage, je crée des visuels hybrides, magnétiques et sur-mesure. Mon processus créatif a quelque chose de magique, mais je ne laisse absolument rien au hasard. Je pars d'un croquis brut puis lui donne vie via peinture digitale, la puissance brute de l'IA, ou un mélange des deux. J'édite chaque détail pour obtenir exactement l'ambiance que vous visez.
+                </p>
+                
+                <h3 class="mt-20">La créativité alliée à l'IA renforcées par une rigueur technique</h3>
+                <br>
+                <p class="about-text newspaper-text">
+                    J'associe cette force de frappe créative à une discipline technique stricte. Mon véritable atout est que j'ai fait mes armes dans le monde exigeant de la production physique. Après des années à concevoir et préparer des fichiers pour l'impression textile (flocage multicouche, sérigraphie) et la production d'objets (livres, magazines, packaging, signalétique), je sais comment construire et préparer un fichier pour l'envoi en print.
+                    <br><br>
+                    En clair : je ne me contente pas de vous livrer une "belle image". Je livre des visuels percutants, une typographie parfaitement équilibrée, et des fichiers techniquement blindés (Print & Web). Je sécurise toute votre chaîne de production graphique pour que vous n'ayez jamais de mauvaise surprise chez l'imprimeur.
+                </p>
+            </div>
+
+            <!-- COLONNE 2 : Photo et suite du texte -->
+            <div class="about-col">
+                <div class="profile-interactive-container gallery-item" data-images='["content/profil/profil2.jpg", "content/profil/profil1.jpg"]'>
+                    <img src="content/profil/profil2.jpg" class="profile-pic" alt="Aline Taureau">
+                </div>
+                
+                <h3 class="mt-20">Un compas dans l'oeil & du goût</h3>
+                <br>
+                <p class="about-text newspaper-text">
+                    Cette volonté de proposer une prestation créative de A à Z est exactement ce qui a motivé mon passage en freelance. Pour que la magie opère rapidement, j'aime que les choses soient claires dès le départ. Vous m'approchez avec un besoin défini (affiche, logo, produit), une direction globale (illustration, photoréalisme, typographie forte, vidéo IA), votre cible, et quelques inspirations ou juste un "mood". Vous me confiez la matière brute, je traduis votre vision, et je délivre.
+                    <br><br>
+                    Que vous ayez besoin d'une illustration vibrante, d'une couverture de livre percutante, de visuels merch audacieux ou d'une modélisation de design produit, je réponds présente. Basée à Toulouse, je collabore à 100 % en distanciel avec des agences, des marques et des créateurs indépendants.
+                </p>
+            </div>
+
+            <!-- COLONNE 3 : Contact -->
+            <div class="about-col">
+                <h2 class="about-title">CONTACT</h2>
+                
+                <form action="https://formspree.io/f/xkolqqjy" method="POST" class="contact-form">
+                    
+                    <label for="email" class="form-label">Votre Email :</label>
+                    <input type="email" id="email" name="email" required class="contact-input">
+
+                    <label for="message" class="form-label">Votre projet :</label>
+                    <textarea id="message" name="message" maxlength="2500" required class="contact-textarea"></textarea>
+                    
+                    <div class="btn-container">
+                        <button type="submit" class="contact-btn">ENVOYER</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
