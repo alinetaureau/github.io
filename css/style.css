@@ -191,12 +191,6 @@ body { font-family: sans-serif; background-color: #fff; overflow: hidden; }
 
 .item-media { height: 100%; width: auto; object-fit: contain; }
 
-.video-responsive {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-}
-
 /* L'image elle-même avec une transition d'opacité fluide */
 .item-media { 
     height: 100%; 
@@ -212,21 +206,7 @@ body { font-family: sans-serif; background-color: #fff; overflow: hidden; }
     }
 }
 
-.gallery-item iframe.item-media {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
-}
 
-/* --- CORRECTION DÉFINITIVE DE LA VIDÉO VIMEO --- */
-.gallery-item iframe.item-media {
-    height: 100% !important; /* Force la hauteur à être identique aux images (85vh) */
-    width: auto !important;  /* La largeur va se calculer toute seule */
-    display: block !important;
-    pointer-events: none; /* Empêche de cliquer par erreur */
-    border: none;
-}
 
 /* Assure-toi que le conteneur ne crée pas de marges parasites */
 .gallery-item {
