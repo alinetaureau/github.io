@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aline Taureau - Shop (Under Exhumation)</title>
+    
+    <!-- Lien Google Font exact de ton site -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET ET FOND NOIR --- */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            height: 100dvh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* --- LE LOGO --- */
+        .logo-link {
+            display: inline-block;
+            margin-bottom: 40px;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            cursor: pointer;
+        }
+        
+        .logo-link:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+
+        .logo-img {
+            height: 150px;
+            width: auto;
+        }
+
+        /* --- LE TEXTE "WEDNESDAY" EN ALL CAPS --- */
+        .message-container {
+            max-width: 550px;
+            padding: 0 30px;
+            text-transform: uppercase; /* Force tout en majuscules */
+        }
+
+        .message-container p {
+            font-size: 0.85rem; /* Taille sobre et éditoriale */
+            line-height: 1.8;
+            letter-spacing: 2px; /* Espacement chic pour le tout-majuscule */
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .message-container .highlight {
+            color: #888; /* Gris adouci pour faire ressortir la punchline */
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            .logo-img {
+                height: 100px;
+            }
+            .message-container p {
+                font-size: 0.75rem;
+                letter-spacing: 1.5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo cliquable vers la galerie -->
+    <a href="https://alinetaureau.gallery" class="logo-link" title="Back to gallery">
+        <img src="assets/logo-white.svg" alt="Aline Taureau Logo" class="logo-img">
+    </a>
+
+    <!-- Le texte traduit -->
+    <div class="message-container">
+        <p>The shop is currently being exhumed.</p>
+        <p>I am fully aware that this waiting period plunges you into agonizing anticipation.<br>
+        <span class="highlight">Knowing this brings me immense joy.</span></p>
+        <p>Suffer in silence.</p>
+    </div>
+
+</body>
+</html>
