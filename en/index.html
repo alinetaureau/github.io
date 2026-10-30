@@ -104,10 +104,9 @@ img { display: block; }
 
 /* ---------- galerie : images entières, 2 colonnes (3 sur très grand écran) ---------- */
 main { padding: 0 48px 40px calc(var(--lane) + 6px); }
-.grid { column-count: 2; column-gap: var(--gap); }
-@media (min-width: 1900px) { .grid { column-count: 3; } }
-@media (max-width: 699px) { .grid { column-count: 1; } }
-.tile { break-inside: avoid; margin-bottom: var(--gap); }
+.grid { display: flex; gap: var(--gap); align-items: flex-start; }
+.grid .col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
+.tile { margin-bottom: var(--gap); }
 .tile.hidden { display: none; }
 .frame { position: relative; overflow: hidden; border-radius: var(--r); background: #f1f1f2; isolation: isolate; }
 .frame > img.main { width: 100%; height: auto; }
@@ -364,7 +363,7 @@ new IntersectionObserver(([e]) => $("util").classList.toggle("on-dark", e.isInte
 /* ---------- signature / à propos ---------- */
 const sig = document.querySelector(".sig");
 const sigTone = () => sig.classList.toggle("on-dark", $("hero").getBoundingClientRect().bottom > innerHeight / 2);
-addEventListener("scroll", sigTone, { passive: true }); addEventListener("resize", sigTone); addEventListener("resize", () => go(cur));
+addEventListener("scroll", sigTone, { passive: true }); addEventListener("resize", sigTone); let lastW = innerWidth; addEventListener("resize", () => { if (innerWidth !== lastW) { lastW = innerWidth; go(cur); } });
 $("sigLink").addEventListener("click", e => { e.preventDefault(); openAbout(); });
 function openAbout() { $("mpwrap").innerHTML = mpCard(0, PROF2); $("mpwrap").classList.add("vB"); mpWire($("mpwrap")); $("about").classList.add("open"); $("abX").focus(); }
 $("abX").addEventListener("click", () => $("about").classList.remove("open"));
@@ -382,8 +381,6 @@ h.innerHTML = SLIDES.map((s, i) => {
 }).join("") + `<div class="bars">${SLIDES.map(() => "<i><b></b></i>").join("")}</div><button class="next" id="next" aria-label="Next image">${CHEV_R}</button>`;
 $("next").onclick = () => go(cur + 1);
 h.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => { setCat(b.dataset.go); $("secnav").scrollIntoView({ behavior: "smooth" }); }));
-h.onmouseenter = () => { h.classList.add("paused"); clearTimeout(timer); };
-h.onmouseleave = () => { h.classList.remove("paused"); go(cur); };
 function go(n) {
   const S = h.querySelectorAll(".slide"), B = h.querySelectorAll(".bars i"); cur = (n + S.length) % S.length;
   S.forEach((s, i) => s.classList.toggle("on", i === cur));
@@ -397,10 +394,19 @@ go(0); sigTone();
 /* ---------- sections ---------- */
 $("secBar").innerHTML = SECS.map(([k, l, s]) => `<button class="mi sec" data-c="${k}" aria-pressed="false"><span class="ico">${I[k]}</span><span class="long">${l}</span><span class="short">${s}</span></button>`).join("");
 $("secBar").querySelectorAll(".sec").forEach(b => b.addEventListener("click", () => { setCat(b.dataset.c === "all" ? null : b.dataset.c); $("secnav").scrollIntoView({ behavior: "smooth" }); }));
+function layout() {
+  const n = innerWidth >= 1900 ? 3 : innerWidth >= 700 ? 2 : 1, cols = [], hgt = [];
+  for (let k = 0; k < n; k++) { const c = document.createElement("div"); c.className = "col"; cols.push(c); hgt.push(0); }
+  TILES.forEach(t => { if (t.classList.contains("hidden")) return; let k = hgt.indexOf(Math.min(...hgt)); cols[k].appendChild(t); hgt[k] += (+t.dataset.r || 1) + .08; });
+  $("grid").replaceChildren(...cols);
+}
+let colsN = 0; addEventListener("resize", () => { const n = innerWidth >= 1900 ? 3 : innerWidth >= 700 ? 2 : 1; if (n !== colsN) { colsN = n; layout(); } });
+const TILES = [];
 function setCat(c) {
   cat = c;
   $("secBar").querySelectorAll(".sec").forEach(b => b.setAttribute("aria-pressed", b.dataset.c === (cat || "all")));
-  $("grid").querySelectorAll(".tile").forEach(t => t.classList.toggle("hidden", !!cat && !P[+t.dataset.i].tags.includes(cat)));
+  TILES.forEach(t => t.classList.toggle("hidden", !!cat && !P[+t.dataset.i].tags.includes(cat)));
+  layout();
 }
 
 setCat(null);
@@ -415,7 +421,7 @@ ORDER.forEach(i => { const p = P[i];
   if (p.anim) {
     t.classList.add("vid");
     t.innerHTML = `<div class="frame" style="aspect-ratio:${p.w}/${p.h}"><img src="${p.anim}" alt="${esc(p.t)}"></div><div class="cap"><b>${esc(p.t)}</b><span>Pub vidéo</span></div>`;
-    g.appendChild(t); return;
+    t.dataset.r = (p.steps[0].h / p.steps[0].w).toFixed(3); TILES.push(t); return;
   }
   t.classList.add("proj");
   const s0 = p.steps[0], n = p.steps.length;
@@ -430,8 +436,9 @@ ORDER.forEach(i => { const p = P[i];
     fr.querySelector(".nav.n").addEventListener("click", e => { e.stopPropagation(); show(k + 1); });
     fr.addEventListener("click", () => show(k + 1)); fr.style.cursor = "pointer";
   }
-  g.appendChild(t);
+  t.dataset.r = (p.steps[0].h / p.steps[0].w).toFixed(3); TILES.push(t);
 });
+colsN = innerWidth >= 1900 ? 3 : innerWidth >= 700 ? 2 : 1; layout();
 </script>
 </body>
 </html>
