@@ -353,7 +353,7 @@ const SLIDES = [
 let cur = 0, timer = null, cat = null;
 
 /* ---------- menu du haut ---------- */
-$("utilBar").innerHTML = [["about", "About", "#apropos"], ["shop", "Shop", "https://www.alinetaureau.shop"], ["insta", "Instagram", "https://www.instagram.com/alinetaureau/"], ["lang", "FR", "../"]]
+$("utilBar").innerHTML = [["about", "About", "#apropos"], ["insta", "Instagram", "https://www.instagram.com/alinetaureau/"], ["lang", "FR", "../"]]
   .map(([k, l, u]) => `<a class="mi" href="${u}" ${u[0] === "h" ? 'target="_blank" rel="noopener"' : ""} aria-label="${k === "lang" ? "Version française" : l}">${k === "lang" ? "" : `<span class="ico">${I[k]}</span>`}<span class="lbl">${l}</span></a>`).join("");
 $("utilBar").querySelector('a[href="#apropos"]').addEventListener("click", e => { e.preventDefault(); openAbout(); });
 // texte blanc tant que le menu passe sur la home, noir ensuite
