@@ -384,7 +384,6 @@ html{scroll-behavior:smooth}
 .h3-panel .h3-idrow span:last-child{font-size:clamp(9px,1.4vh,12px) !important;padding:clamp(4px,.8vh,7px) clamp(7px,1vh,11px) !important}
 .h3-tag{font-size:clamp(8px,1.25vh,10.5px);padding:clamp(4px,.8vh,8px) clamp(6px,.9vh,10px)}
 .h3-cta{min-height:32px;font-size:clamp(10px,1.5vh,12px)}
-.h3-c1,.h3-c3{width:clamp(66px,11vh,104px)}.h3-c2,.h3-c4{width:clamp(58px,10vh,92px)}
 }
 /* bandeau MP3 moins haut */
 .mp2-screen{padding:8px 0}
@@ -431,11 +430,11 @@ html{scroll-behavior:smooth}
 .h3-stk:hover,.p3-stk:hover,.a6-stk:hover,.g6-stk:not(.ct9-glasses):hover{rotate:6deg;translate:0 -4px}
 .h3-stk:active,.p3-stk:active,.a6-stk:active,.g6-stk:not(.ct9-glasses):active{scale:.94}
 /* ---- pop-up ---- */
-.ia9{position:fixed;inset:0;z-index:90;display:grid;justify-items:center;align-items:start;overflow:auto;padding:150px 16px 40px;background:rgba(11,10,16,.62);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.ia9{position:fixed;inset:0;z-index:90;display:grid;justify-items:center;align-items:start;overflow:auto;padding:110px 16px 40px;background:rgba(11,10,16,.62);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .ia9[hidden]{display:none}
 .ia9-wrap{position:relative;width:min(640px,100%);animation:ia9in .5s cubic-bezier(.2,.8,.2,1)}
 @keyframes ia9in{from{transform:translateY(24px) rotate(-2deg) scale(.95);opacity:0}to{transform:none;opacity:1}}
-.ia9-card{position:relative;border-radius:18px;background:#101010;color:#f4f2f7;box-shadow:0 30px 70px rgba(0,0,0,.65);padding:72px 44px 30px 52px;box-sizing:border-box;font-family:'Space Mono',monospace}
+.ia9-card{position:relative;border-radius:18px;background:#101010;color:#f4f2f7;box-shadow:0 30px 70px rgba(0,0,0,.65);padding:100px 44px 30px 52px;box-sizing:border-box;font-family:'Space Mono',monospace}
 .ia9-bar{position:absolute;left:0;top:0;bottom:0;width:7px;border-radius:18px 0 0 18px;background:linear-gradient(#f9a8d4,#c4b5fd 25%,#93e1ff 45%,#a7f3d0 62%,#d9f99d 80%,#fde68a)}
 .ia9-x{position:absolute;right:16px;top:16px;width:40px;height:40px;border-radius:50%;border:0;background:#ff2a62;color:#fff;font-size:15px;cursor:pointer;z-index:3}
 .ia9-k{margin:0 0 8px;text-align:center;font:700 10px/1 'Space Mono',monospace;letter-spacing:.3em;color:#ff2a62}
@@ -451,10 +450,10 @@ html{scroll-behavior:smooth}
 .ia9-mp3 > *{position:relative;z-index:2}
 .ia9-mp3 .k{margin:0 0 4px;font:700 10px/1 'Space Mono',monospace;letter-spacing:.24em}
 .ia9-mp3 h3{margin:0 0 8px;font-family:VT323,'Space Mono',monospace;font-weight:400;font-size:34px;line-height:1;letter-spacing:.03em;text-transform:uppercase}
-.ia9-mp3 p{margin:0;font-size:11.5px;line-height:1.65;font-weight:700}
+.ia9-mp3 p{margin:0;font-size:11px;line-height:1.7;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
 .ia9-sig{margin:22px 0 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);font:700 10px/1.6 'Space Mono',monospace;letter-spacing:.06em;color:#2cc6c0;text-align:center}
 /* nuage CMYK animé : la pluie tombe, les lettres s'écrasent et rebondissent */
-.ia9-cloud{position:absolute;left:50%;top:-138px;width:168px;aspect-ratio:230 / 240;transform:translateX(-50%) rotate(-4deg);z-index:2;pointer-events:none;animation:holoD 14.2s linear infinite}
+.ia9-cloud{position:absolute;left:50%;top:-92px;width:168px;height:auto;transform:translateX(-50%) rotate(-4deg);z-index:4;pointer-events:none;filter:drop-shadow(0 10px 20px rgba(0,0,0,.6))}
 .ia9-cloud i{position:absolute;inset:0;background:var(--cl) center / 100% 100% no-repeat}
 .ia9-cloud .c1{clip-path:inset(0 0 52% 0)}
 .ia9-cloud .c2{clip-path:inset(47.5% 0 37% 0);transform-origin:50% 47.5%;animation:iaDrip 2.6s ease-in-out infinite}
@@ -467,7 +466,7 @@ html{scroll-behavior:smooth}
 @keyframes iaSquash{0%,38%,100%{transform:scaleY(1)}50%{transform:scaleY(.84)}62%{transform:scaleY(1.07)}72%{transform:scaleY(.98)}}
 @keyframes iaDrop{0%,30%{opacity:0;transform:translateY(0)}38%{opacity:1}58%{opacity:0;transform:translateY(26px)}100%{opacity:0;transform:translateY(26px)}}
 @keyframes mp9{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (max-width:600px){.ia9{padding-top:130px}.ia9-card{padding:64px 18px 22px 24px}.ia9-g{grid-template-columns:1fr}.ia9-cloud{width:130px;top:-110px}.ia9-t{font-size:16px}.ia9-mp3 h3{font-size:28px}}
+@media (max-width:600px){.ia9{padding-top:90px}.ia9-card{padding:80px 18px 22px 24px}.ia9-g{grid-template-columns:1fr}.ia9-cloud{width:132px;top:-72px}.ia9-t{font-size:16px}.ia9-mp3 h3{font-size:28px}}
 @media (prefers-reduced-motion: reduce){.ia9-wrap,.ia9-cloud,.ia9-cloud i,.ia9-cloud b,.ia9-mp3::before{animation:none !important}}
 
 /* ---- site ---- */
@@ -708,10 +707,10 @@ body{color:#f4f2f7}
 </div>
 <div class="ia9" id="ia" role="dialog" aria-modal="true" aria-labelledby="iaT" hidden>
 <div class="ia9-wrap">
-<div class="ia9-cloud" aria-hidden="true" style="--cl:url('../../v3/stk/cloud-cmyk.webp')"><i class="c1"></i><i class="c2"></i><i class="c3"></i><b></b><b></b><b></b></div>
+<img class="ia9-cloud" src="../../v3/stk/cloud-cmyk.webp" alt="" aria-hidden="true">
 <div class="ia9-card"><div class="ia9-bar" aria-hidden="true"></div>
 <button type="button" class="ia9-x" aria-label="Close">✕</button>
-<p class="ia9-k">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; ME &amp; AI</p>
+<p class="ia9-k">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; AI &amp; ME</p>
 <h2 class="ia9-t" id="iaT">Made to exist for real.</h2>
 <p class="ia9-s">AI is one tool among others. The eye, the hand and the print know-how stay mine.</p>
 <div class="ia9-g"><div><h3><span>01</span>Sketch first</h3><p>Every project starts by hand. Composition, character, pose, type: everything is decided on paper before I open any software.</p></div><div><h3><span>02</span>AI, if you want it</h3><p>I use it to explore render options when the project calls for it and you agree. Don't want it? I won't touch it. We decide together at the brief.</p></div><div><h3><span>03</span>Digital painting: 100% by hand</h3><p>Every digital painting in this gallery is painted by hand, stroke by stroke. No AI in their render.</p></div><div><h3><span>04</span>Nothing leaves as is</h3><p>When AI comes into a project, I rework everything: composition, hands, light, texture, type. The final image goes through my eye and my hand, from the first pixel to the last.</p></div></div>
