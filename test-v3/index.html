@@ -419,6 +419,22 @@ html{scroll-behavior:smooth}
 @media (min-width: 561px) and (max-width: 1100px){.g6-grid{columns:2;column-gap:28px}}
 @media (max-width: 560px){.g6-grid{columns:1}}
 
+.h3-cols{display:none}
+@container h3 (min-width: 1101px){
+.h3-mos{display:none}
+.h3-cols{position:absolute;top:0;bottom:0;right:0;width:75%;z-index:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14%);mask-image:linear-gradient(90deg,transparent 0,#000 14%)}
+.h3-col{display:flex;flex-direction:column;gap:6px;min-width:0}
+.h3-col .h3-tile{flex:none}
+.h3-col .h3-tile img{height:auto;object-fit:initial}
+.h3-col:nth-child(1){margin-top:-60px}
+.h3-col:nth-child(2){margin-top:-40px}
+.h3-h1{font-size:clamp(42px,8.2vh,72px)}
+}
+/* le logo a aussi les reflets holographiques */
+.h3-logo,.pg-fl img,.mn9-logo{animation:holoD 14.2s linear infinite}
+.pg-fl.pop img{animation:pgpop .55s cubic-bezier(.2,.8,.2,1)}
+@media (prefers-reduced-motion: reduce){.h3-logo,.pg-fl img,.mn9-logo{animation:none}}
+
 /* ---- site ---- */
 body{color:#f4f2f7}
 .h3-logo{cursor:pointer}
@@ -546,13 +562,14 @@ body{color:#f4f2f7}
 </div>
 <a class="h3-cta" href="#galerie">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Voir les affiches <span class="h3-cur" aria-hidden="true"></span></a>
 </div>
+<div class="h3-cols" aria-hidden="true"><div class="h3-col"><div class="h3-tile"><img src="../v3/cu/cu-johnny.webp" alt="Basket, flammes du GO et skate, Go Johnny Go"><span class="h3-pill">Média mix</span></div><div class="h3-tile"><img src="../v3/cu/cu-holdon.webp" alt="Fleur, main, bague et épée, Hold On to Hope"><span class="h3-pill">Gravure & encre</span></div></div><div class="h3-col"><div class="h3-tile"><img src="../v3/cu/cu-blissful.webp" alt="Le titre peint, Blissful Tide"><span class="h3-pill">Peinture à l'huile</span></div><div class="h3-tile"><img src="../v3/cu/cu-lapaix.webp" alt="Verre de vin, tatouage et tags, La Paix !"><span class="h3-pill">Média mix</span></div><div class="h3-tile"><img src="../v3/cu/cu-yetta.webp" alt="Visage, lunettes et bijoux, Grandma Yetta"><span class="h3-pill">Digital painting</span></div></div><div class="h3-col"><div class="h3-tile"><img src="../v3/cu/cu-ripley.webp" alt="Buste, cigarette et hublot, Ripley In Between"><span class="h3-pill">Photoréaliste</span></div><div class="h3-tile"><img src="../v3/cu/cu-rogue.webp" alt="Visage qui crie, Go Rogue"><span class="h3-pill">Photoréaliste</span></div></div></div>
 <div class="h3-mos" aria-hidden="true">
 <div class="h3-tile" style="grid-area: r"><img src="../v3/cu/cu-ripley.webp" alt="Buste, cigarette et hublot, Ripley In Between" style="object-position: 74% 72%"><span class="h3-pill">Photoréaliste</span></div>
 <div class="h3-tile" style="grid-area: b"><img src="../v3/cu/cu-blissful.webp" alt="Le titre peint, Blissful Tide" style="object-position: 50% 50%"><span class="h3-pill">Peinture à l'huile</span></div>
 <div class="h3-tile" style="grid-area: y"><img src="../v3/cu/cu-yetta.webp" alt="Visage, lunettes et bijoux, Grandma Yetta" style="object-position: 50% 35%"><span class="h3-pill">Digital painting</span></div>
 <div class="h3-tile" style="grid-area: h"><img src="../v3/cu/cu-holdon.webp" alt="Fleur, main, bague et épée, Hold On to Hope" style="object-position: 50% 50%"><span class="h3-pill">Gravure & encre</span></div>
 <div class="h3-tile" style="grid-area: j"><img src="../v3/cu/cu-johnny.webp" alt="Basket, flammes du GO et skate, Go Johnny Go" style="object-position: 50% 55%"><span class="h3-pill">Média mix</span></div>
-<div class="h3-tile" style="grid-area: l"><img src="../v3/cu/cu-lapaix.webp" alt="Verre de vin, tatouage et tags, La Paix !" style="object-position: 50% 50%"><span class="h3-pill">Média mix</span></div>
+<div class="h3-tile" style="grid-area: l"><img src="../v3/cu/cu-lapaix.webp" alt="Verre de vin, tatouage et tags, La Paix !" style="object-position: 50% 78%"><span class="h3-pill">Média mix</span></div>
 <div class="h3-tile" style="grid-area: g"><img src="../v3/cu/cu-rogue.webp" alt="Visage qui crie, Go Rogue" style="object-position: 50% 30%"><span class="h3-pill">Photoréaliste</span></div>
 </div>
 <div class="h3-shade" aria-hidden="true"></div>
