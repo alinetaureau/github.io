@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Pop-up Moi &amp; l'IA · maquettes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&family=Michroma&family=Space+Mono:wght@400;700&family=Inter:wght@700;800&family=VT323&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0b0a10}
+.pi{font-family:'Space Mono',monospace;color:#f4f2f7;padding:52px 52px 80px;background-color:#0b0a10;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:32px 32px}
+.k{margin:0 0 8px;font:700 11px/1 'Space Mono',monospace;letter-spacing:.3em;color:#3fe0d0}
+.h{margin:0 0 10px;font-family:Michroma,sans-serif;font-weight:400;font-size:22px;text-transform:uppercase}
+.h span{color:#ff2a62}
+.note{margin:0 0 28px;max-width:760px;font-size:12.5px;line-height:1.7;color:#b7b3c2}
+.row{display:flex;flex-wrap:wrap;gap:72px 56px;align-items:flex-start;margin-bottom:84px}
+.lab{display:block;margin-bottom:76px;font:700 10px/1 'Space Mono',monospace;letter-spacing:.24em;color:#8b8796;text-transform:uppercase}
+.cloud{position:absolute;left:50%;top:-96px;width:150px;height:auto;transform:translateX(-50%) rotate(-4deg);z-index:3;pointer-events:none;animation:holoD 14.2s linear infinite;filter:drop-shadow(0 10px 20px rgba(0,0,0,.6))}
+@keyframes holoD{0%,49.3%{filter:drop-shadow(0 10px 20px rgba(0,0,0,.6)) hue-rotate(0deg) saturate(1) brightness(1)}53.5%{filter:drop-shadow(0 10px 20px rgba(0,0,0,.6)) hue-rotate(170deg) saturate(1.5) brightness(1.18)}57.7%{filter:drop-shadow(0 10px 20px rgba(0,0,0,.6)) hue-rotate(320deg) saturate(1.6) brightness(1.05)}60.6%,88.7%{filter:drop-shadow(0 10px 20px rgba(0,0,0,.6)) hue-rotate(360deg) saturate(1) brightness(1)}93%{filter:drop-shadow(0 10px 20px rgba(0,0,0,.6)) hue-rotate(530deg) saturate(1.5) brightness(1.18)}97.2%{filter:drop-shadow(0 10px 20px rgba(0,0,0,.6)) hue-rotate(680deg) saturate(1.6) brightness(1.05)}100%{filter:drop-shadow(0 10px 20px rgba(0,0,0,.6)) hue-rotate(720deg) saturate(1) brightness(1)}}
+.x{position:absolute;right:14px;top:14px;width:30px;height:30px;border-radius:50%;border:0;background:#ff2a62;color:#fff;font-size:13px;cursor:pointer;z-index:4}
+.prism{background:linear-gradient(#f9a8d4,#c4b5fd 25%,#93e1ff 45%,#a7f3d0 62%,#d9f99d 80%,#fde68a)}
+.num{font-family:Michroma,sans-serif;color:#ff2a62}
+
+/* A · carte longue */
+.A{position:relative;width:620px;border-radius:18px;background:#101010;box-shadow:0 30px 60px rgba(0,0,0,.6);padding:74px 44px 30px 52px;box-sizing:border-box}
+.A .bar{position:absolute;left:0;top:0;bottom:0;width:7px;border-radius:18px 0 0 18px}
+.A .t{margin:0;font:400 19px/1.2 Michroma,sans-serif;color:#2cc6c0;text-transform:uppercase;text-align:center}
+.A .s{margin:10px auto 22px;max-width:440px;text-align:center;font-size:11.5px;line-height:1.6;color:#cfcfcf}
+.A .g{display:grid;grid-template-columns:1fr 1fr;gap:16px 26px}
+.A .g div:last-child{grid-column:1 / -1}
+.A h4{margin:0 0 5px;font:700 11px/1.3 'Space Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.A p{margin:0;font-size:10.8px;line-height:1.6;color:#e2e2e2}
+.A .sig{margin:20px 0 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);font:700 10px/1.6 'Space Mono',monospace;letter-spacing:.06em;color:#2cc6c0;text-align:center}
+
+/* B · carte à onglets (format Multipass) */
+.Bc{position:relative;width:620px;aspect-ratio:1.586;border-radius:18px;background:#101010;box-shadow:0 30px 60px rgba(0,0,0,.6);display:grid;grid-template-columns:200px 7px 1fr;overflow:visible}
+.Bc .l{border-radius:18px 0 0 18px;background:#0b0a10;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:14px 14px;padding:70px 18px 20px;display:flex;flex-direction:column;gap:6px}
+.Bc .tab{display:flex;gap:10px;align-items:baseline;text-align:left;background:none;border:0;border-left:2px solid transparent;color:#8b8796;padding:6px 8px;cursor:pointer;font:700 9.5px/1.3 'Space Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+.Bc .tab:hover{color:#f4f2f7}
+.Bc .tab.on{color:#fff;border-left-color:#ff2a62;background:rgba(255,42,98,.1)}
+.Bc .tab .num{font-size:11px}
+.Bc .r{padding:62px 30px 22px 28px;display:flex;flex-direction:column}
+.Bc .t{margin:0;font:400 15px/1.2 Michroma,sans-serif;text-transform:uppercase}
+.Bc .t span{color:#ff2a62}
+.Bc h4{margin:16px 0 8px;font:700 12px/1.3 'Space Mono',monospace;letter-spacing:.1em;color:#2cc6c0;text-transform:uppercase}
+.Bc p{margin:0;font-size:11.5px;line-height:1.65;color:#e8e8e8}
+.Bc .sig{margin-top:auto;font:400 9.5px/1.5 'Space Mono',monospace;color:#8b8796}
+.Bc .dots{display:flex;gap:5px;margin-top:10px}
+.Bc .dots i{flex:1;height:3px;background:rgba(244,242,247,.18)}
+.Bc .dots i.on{background:#ff2a62}
+
+/* C · écran MP3 + accordéon */
+.C{position:relative;width:620px;border-radius:18px;background:#0b0a10;border:1px solid rgba(255,42,98,.55);box-shadow:0 30px 60px rgba(0,0,0,.6);overflow:visible}
+.C .scr{position:relative;height:150px;border-radius:17px 17px 0 0;overflow:hidden}
+.C .scr::before{content:"";position:absolute;top:0;bottom:0;left:0;width:200%;background:linear-gradient(90deg,#ff9ed2,#b9a4ff,#7fdcff,#9ff5c9,#f2f79a,#ffcf8a,#ff9ed2,#b9a4ff,#7fdcff,#9ff5c9,#f2f79a,#ffcf8a,#ff9ed2);animation:mp9 18s linear infinite}
+@keyframes mp9{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.C .scr .g{position:absolute;inset:0;background-image:linear-gradient(rgba(7,8,12,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(7,8,12,.16) 1px,transparent 1px);background-size:4px 4px}
+.C .scr h3{position:absolute;left:0;right:0;bottom:16px;margin:0;text-align:center;font-family:VT323,'Space Mono',monospace;font-weight:400;font-size:40px;line-height:1;color:#07080c;letter-spacing:.03em;white-space:nowrap;text-transform:uppercase}
+.C .in{padding:18px 26px 22px}
+.C .s{margin:0 0 14px;font-size:11.5px;line-height:1.6;color:#c9c5d3}
+.C .it{border-top:1px solid rgba(255,42,98,.35)}
+.C .it button{width:100%;display:flex;align-items:center;gap:14px;background:none;border:0;color:#f4f2f7;padding:11px 0;cursor:pointer;text-align:left;font:700 11px/1.3 'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
+.C .it button .pl{margin-left:auto;color:#ff2a62;font-size:16px;transition:transform .3s}
+.C .it.on button .pl{transform:rotate(45deg)}
+.C .it .b{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s}
+.C .it.on .b{grid-template-rows:1fr}
+.C .it .b > div{overflow:hidden}
+.C .it p{margin:0 0 12px 34px;font-size:11px;line-height:1.65;color:#d8d4e0}
+.C .sig{margin:14px 0 0;font:700 10px/1.6 'Space Mono',monospace;color:#3fe0d0}
+
+/* D · manifeste */
+.D{position:relative;width:620px;border-radius:18px;background:#0b0a10;background-image:radial-gradient(ellipse 70% 50% at 100% 0%,rgba(150,70,170,.3),transparent 70%),linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:100% 100%,16px 16px,16px 16px;border:1px solid rgba(255,42,98,.55);box-shadow:0 30px 60px rgba(0,0,0,.6);padding:70px 30px 26px 34px;box-sizing:border-box;display:grid;grid-template-columns:200px 1fr;gap:26px}
+.D .bar{position:absolute;left:0;top:0;bottom:0;width:6px;border-radius:18px 0 0 18px}
+.D .t{margin:0;font-family:Antonio,sans-serif;font-weight:700;font-size:46px;line-height:.92;text-transform:uppercase}
+.D .t span{color:#ff2a62}
+.D .stamp{display:inline-block;margin-top:16px;font-family:Inter,sans-serif;font-weight:800;font-size:11px;letter-spacing:.12em;color:#fff;background:#ff2a62;padding:7px 10px;transform:rotate(-4deg)}
+.D .s{margin:16px 0 0;font-size:10.5px;line-height:1.6;color:#b7b3c2}
+.D .logo{display:block;width:62px;margin-top:22px}
+.D ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.D li{display:grid;grid-template-columns:34px 1fr;gap:4px 10px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.D li .num{grid-row:span 2;font-size:15px}
+.D h4{margin:0;font:700 11px/1.3 'Space Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.D p{margin:0;font-size:10.5px;line-height:1.6;color:#d8d4e0}
+.D .sig{grid-column:1 / -1;margin:0;font:700 10px/1.6 'Space Mono',monospace;color:#3fe0d0;text-align:center}
+
+/* point baladeur */
+.stage{position:relative;width:1360px;height:300px;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;background:#0b0a10}
+.stage .stk{position:absolute;width:96px;height:auto;cursor:pointer;filter:drop-shadow(0 8px 16px rgba(0,0,0,.6));transition:transform .2s}
+.stage .stk:hover{transform:scale(1.08) rotate(-4deg)}
+.dot{position:absolute;left:0;top:0;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#ff2a62;box-shadow:0 0 0 0 rgba(255,42,98,.7);pointer-events:none;z-index:5;animation:dotpath 14s cubic-bezier(.45,0,.25,1) infinite,dotpulse 1.4s ease-out infinite}
+.dot::after{content:"clic";position:absolute;left:18px;top:-4px;font:700 9px/1 'Space Mono',monospace;letter-spacing:.2em;color:#3fe0d0;text-transform:uppercase;opacity:0;animation:dotlab 3.5s linear infinite}
+@keyframes dotpulse{0%{box-shadow:0 0 0 0 rgba(255,42,98,.7)}100%{box-shadow:0 0 0 14px rgba(255,42,98,0)}}
+@keyframes dotlab{0%,55%{opacity:0}65%,90%{opacity:1}100%{opacity:0}}
+@keyframes dotpath{
+0%,12%{transform:translate(268px,92px)}
+25%,37%{transform:translate(650px,210px)}
+50%,62%{transform:translate(1010px,70px)}
+75%,87%{transform:translate(1210px,226px)}
+100%{transform:translate(268px,92px)}}
+.ov{position:absolute;inset:0;background:rgba(11,10,16,.7);backdrop-filter:blur(8px);display:grid;place-items:center;z-index:8}
+@media (prefers-reduced-motion: reduce){.dot,.cloud,.C .scr::before{animation:none}}
+
+.ov{position:fixed;inset:0;overflow:auto;padding:120px 16px 40px;align-items:start;z-index:50}
+.ov > div{transform:none !important}
+.ov[hidden]{display:none}
+@media (max-width:700px){.pi{padding:32px 16px 60px}.row{gap:110px}.A,.Bc,.C,.D{width:min(620px,calc(100vw - 32px))}.stage{width:100%}.D{grid-template-columns:1fr}.Bc{grid-template-columns:1fr;aspect-ratio:auto}.Bc .prism{height:6px}.A .g{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="pi">
+<p class="k">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; LE POINT BALADEUR</p>
+<h2 class="h">Un point qui <span>se balade</span></h2>
+<p class="note">Un petit point rose saute d'un sticker holo à l'autre, pulse et affiche « clic ». N'importe quel sticker ouvre la pop-up « Moi &amp; l'IA ». Clique sur un sticker ci-dessous pour essayer (pop-up A).</p>
+<div class="stage">
+<img class="stk" src="../../v3/stk/lips.webp" alt="Sticker lèvres : ouvrir « Moi & l'IA »" style="left:220px;top:44px;transform:rotate(-12deg)" data-open="1" tabindex="0" role="button">
+<img class="stk" src="../../v3/stk/skull.webp" alt="Sticker tête de mort : ouvrir « Moi & l'IA »" style="left:602px;top:162px;transform:rotate(10deg)" data-open="1" tabindex="0" role="button">
+<img class="stk" src="../../v3/stk/heart-striped.webp" alt="Sticker cœur : ouvrir « Moi & l'IA »" style="left:962px;top:22px;transform:rotate(14deg)" data-open="1" tabindex="0" role="button">
+<img class="stk" src="../../v3/stk/spray-pschht.webp" alt="Sticker pschht : ouvrir « Moi & l'IA »" style="left:1162px;top:178px;transform:rotate(-8deg)" data-open="1" tabindex="0" role="button">
+<span class="dot" aria-hidden="true"></span>
+<div class="ov" id="ov" hidden data-close="1"><div style="position: relative; transform: scale(.62); transform-origin: center" data-stop="1"><button class="x" type="button" aria-label="Fermer" data-close="1">✕</button><div class="A" style="margin-top: 96px"><img class="cloud" src="../../v3/stk/cloud-cmyk.webp" alt="" aria-hidden="true"><div class="bar prism"></div>
+<p class="t">Fait pour exister en vrai.</p><p class="s">L'IA est un outil parmi d'autres. L'œil, la main et le savoir-faire d'impression restent les miens.</p>
+<div class="g"><div><h4><span class="num">01</span> Le croquis d'abord</h4><p>Chaque projet commence à la main. Composition, personnage, posture, typo : tout se décide sur le papier, avant d'ouvrir le moindre logiciel.</p></div><div><h4><span class="num">02</span> L'IA, si vous le voulez</h4><p>Je m'en sers pour explorer des pistes de rendu, quand le projet s'y prête et que vous êtes d'accord. Vous n'en voulez pas ? Je n'y touche pas. On le décide ensemble, dès le brief.</p></div><div><h4><span class="num">03</span> Digital painting : 100 % main</h4><p>Tous les digital paintings de cette galerie sont peints à la main, trait par trait. Aucune IA dans leur rendu.</p></div><div><h4><span class="num">04</span> Rien ne sort tel quel</h4><p>Quand l'IA entre dans un projet, je reprends tout : composition, mains, lumière, matière, typo. L'image finale passe par mon œil et ma main, du premier au dernier pixel.</p></div><div><h4><span class="num">05</span> Pensé pour s'imprimer dans le réel</h4><p>Ce que je crée finit sur du papier, du textile, un objet : une affiche, un tee-shirt, une couverture. Des années en production d'impression m'ont appris ce qu'un écran ne montre pas : le noir qui bouche, la couleur qui vire, le motif qui tient au lavage. Ça ne se simule pas.</p></div></div>
+<p class="sig">Un œil de compo qui ne cesse d'apprendre. Une âme d'artiste. Un métier d'impression. Les trois ensemble.</p></div></div></div>
+</div>
+<p class="k" style="margin-top: 72px">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; MOI &amp; L'IA</p>
+<h2 class="h">Pop-up · <span>4 mises en page</span></h2>
+<p class="note">Même texte dans les quatre : un titre, un sous-titre, 5 articles et une signature. Le nuage CMYK qui coule est posé en gros, au milieu, en haut.</p>
+<div class="row">
+<div><span class="lab">A · Carte longue (verso Multipass)</span><div class="A"><img class="cloud" src="../../v3/stk/cloud-cmyk.webp" alt="" aria-hidden="true"><div class="bar prism"></div>
+<p class="t">Fait pour exister en vrai.</p><p class="s">L'IA est un outil parmi d'autres. L'œil, la main et le savoir-faire d'impression restent les miens.</p>
+<div class="g"><div><h4><span class="num">01</span> Le croquis d'abord</h4><p>Chaque projet commence à la main. Composition, personnage, posture, typo : tout se décide sur le papier, avant d'ouvrir le moindre logiciel.</p></div><div><h4><span class="num">02</span> L'IA, si vous le voulez</h4><p>Je m'en sers pour explorer des pistes de rendu, quand le projet s'y prête et que vous êtes d'accord. Vous n'en voulez pas ? Je n'y touche pas. On le décide ensemble, dès le brief.</p></div><div><h4><span class="num">03</span> Digital painting : 100 % main</h4><p>Tous les digital paintings de cette galerie sont peints à la main, trait par trait. Aucune IA dans leur rendu.</p></div><div><h4><span class="num">04</span> Rien ne sort tel quel</h4><p>Quand l'IA entre dans un projet, je reprends tout : composition, mains, lumière, matière, typo. L'image finale passe par mon œil et ma main, du premier au dernier pixel.</p></div><div><h4><span class="num">05</span> Pensé pour s'imprimer dans le réel</h4><p>Ce que je crée finit sur du papier, du textile, un objet : une affiche, un tee-shirt, une couverture. Des années en production d'impression m'ont appris ce qu'un écran ne montre pas : le noir qui bouche, la couleur qui vire, le motif qui tient au lavage. Ça ne se simule pas.</p></div></div>
+<p class="sig">Un œil de compo qui ne cesse d'apprendre. Une âme d'artiste. Un métier d'impression. Les trois ensemble.</p></div></div>
+<div><span class="lab">B · Carte à onglets (format Multipass) · clique sur les numéros</span><div class="Bc"><img class="cloud" src="../../v3/stk/cloud-cmyk.webp" alt="" aria-hidden="true">
+<div class="l"><button type="button" class="tab on" data-i="0"><span class="num">01</span><span>Le croquis d'abord</span></button><button type="button" class="tab" data-i="1"><span class="num">02</span><span>L'IA, si vous le voulez</span></button><button type="button" class="tab" data-i="2"><span class="num">03</span><span>Digital painting : 100 % main</span></button><button type="button" class="tab" data-i="3"><span class="num">04</span><span>Rien ne sort tel quel</span></button><button type="button" class="tab" data-i="4"><span class="num">05</span><span>Pensé pour s'imprimer dans le réel</span></button></div>
+<div class="prism"></div>
+<div class="r"><p class="t">Fait pour exister <span>en vrai.</span></p><h4 id="bh">01 · Le croquis d'abord</h4><p id="bp">Chaque projet commence à la main. Composition, personnage, posture, typo : tout se décide sur le papier, avant d'ouvrir le moindre logiciel.</p>
+<div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+<p class="sig">Un œil de compo qui ne cesse d'apprendre. Une âme d'artiste. Un métier d'impression. Les trois ensemble.</p></div></div></div>
+</div>
+<div class="row" style="margin-bottom: 0">
+<div><span class="lab">C · Écran MP3 + accordéon · clique sur les +</span><div class="C"><img class="cloud" src="../../v3/stk/cloud-cmyk.webp" alt="" aria-hidden="true"><div class="scr"><div class="g"></div><h3>Fait pour exister en vrai</h3></div>
+<div class="in"><p class="s">L'IA est un outil parmi d'autres. L'œil, la main et le savoir-faire d'impression restent les miens.</p>
+<div class="it on"><button type="button" data-i="0" aria-expanded="true"><span class="num">01</span>Le croquis d'abord<span class="pl">+</span></button><div class="b"><div><p>Chaque projet commence à la main. Composition, personnage, posture, typo : tout se décide sur le papier, avant d'ouvrir le moindre logiciel.</p></div></div></div><div class="it"><button type="button" data-i="1" aria-expanded="false"><span class="num">02</span>L'IA, si vous le voulez<span class="pl">+</span></button><div class="b"><div><p>Je m'en sers pour explorer des pistes de rendu, quand le projet s'y prête et que vous êtes d'accord. Vous n'en voulez pas ? Je n'y touche pas. On le décide ensemble, dès le brief.</p></div></div></div><div class="it"><button type="button" data-i="2" aria-expanded="false"><span class="num">03</span>Digital painting : 100 % main<span class="pl">+</span></button><div class="b"><div><p>Tous les digital paintings de cette galerie sont peints à la main, trait par trait. Aucune IA dans leur rendu.</p></div></div></div><div class="it"><button type="button" data-i="3" aria-expanded="false"><span class="num">04</span>Rien ne sort tel quel<span class="pl">+</span></button><div class="b"><div><p>Quand l'IA entre dans un projet, je reprends tout : composition, mains, lumière, matière, typo. L'image finale passe par mon œil et ma main, du premier au dernier pixel.</p></div></div></div><div class="it"><button type="button" data-i="4" aria-expanded="false"><span class="num">05</span>Pensé pour s'imprimer dans le réel<span class="pl">+</span></button><div class="b"><div><p>Ce que je crée finit sur du papier, du textile, un objet : une affiche, un tee-shirt, une couverture. Des années en production d'impression m'ont appris ce qu'un écran ne montre pas : le noir qui bouche, la couleur qui vire, le motif qui tient au lavage. Ça ne se simule pas.</p></div></div></div>
+<p class="sig">Un œil de compo qui ne cesse d'apprendre. Une âme d'artiste. Un métier d'impression. Les trois ensemble.</p></div></div></div>
+<div><span class="lab">D · Manifeste</span><div class="D"><img class="cloud" src="../../v3/stk/cloud-cmyk.webp" alt="" aria-hidden="true"><div class="bar prism"></div>
+<div><h3 class="t">Fait pour<br>exister<br><span>en vrai.</span></h3><span class="stamp">0 % IA DANS MES PAINTINGS</span><p class="s">L'IA est un outil parmi d'autres. L'œil, la main et le savoir-faire d'impression restent les miens.</p><img class="logo" src="../../v3/logo-holo.webp" alt="Signature Aline Taureau"></div>
+<ol><li><span class="num">01</span><h4>Le croquis d'abord</h4><p>Chaque projet commence à la main. Composition, personnage, posture, typo : tout se décide sur le papier, avant d'ouvrir le moindre logiciel.</p></li><li><span class="num">02</span><h4>L'IA, si vous le voulez</h4><p>Je m'en sers pour explorer des pistes de rendu, quand le projet s'y prête et que vous êtes d'accord. Vous n'en voulez pas ? Je n'y touche pas. On le décide ensemble, dès le brief.</p></li><li><span class="num">03</span><h4>Digital painting : 100 % main</h4><p>Tous les digital paintings de cette galerie sont peints à la main, trait par trait. Aucune IA dans leur rendu.</p></li><li><span class="num">04</span><h4>Rien ne sort tel quel</h4><p>Quand l'IA entre dans un projet, je reprends tout : composition, mains, lumière, matière, typo. L'image finale passe par mon œil et ma main, du premier au dernier pixel.</p></li><li><span class="num">05</span><h4>Pensé pour s'imprimer dans le réel</h4><p>Ce que je crée finit sur du papier, du textile, un objet : une affiche, un tee-shirt, une couverture. Des années en production d'impression m'ont appris ce qu'un écran ne montre pas : le noir qui bouche, la couleur qui vire, le motif qui tient au lavage. Ça ne se simule pas.</p></li></ol><p class="sig">Un œil de compo qui ne cesse d'apprendre. Une âme d'artiste. Un métier d'impression. Les trois ensemble.</p></div></div>
+</div>
+</div>
+<script>
+const ART = [["Le croquis d'abord", "Chaque projet commence à la main. Composition, personnage, posture, typo : tout se décide sur le papier, avant d'ouvrir le moindre logiciel."], ["L'IA, si vous le voulez", "Je m'en sers pour explorer des pistes de rendu, quand le projet s'y prête et que vous êtes d'accord. Vous n'en voulez pas ? Je n'y touche pas. On le décide ensemble, dès le brief."], ["Digital painting : 100 % main", "Tous les digital paintings de cette galerie sont peints à la main, trait par trait. Aucune IA dans leur rendu."], ["Rien ne sort tel quel", "Quand l'IA entre dans un projet, je reprends tout : composition, mains, lumière, matière, typo. L'image finale passe par mon œil et ma main, du premier au dernier pixel."], ["Pensé pour s'imprimer dans le réel", "Ce que je crée finit sur du papier, du textile, un objet : une affiche, un tee-shirt, une couverture. Des années en production d'impression m'ont appris ce qu'un écran ne montre pas : le noir qui bouche, la couleur qui vire, le motif qui tient au lavage. Ça ne se simule pas."]];
+document.querySelectorAll('.Bc .tab').forEach((t) => t.addEventListener('click', () => {
+  const i = +t.dataset.i;
+  document.querySelectorAll('.Bc .tab').forEach((x, k) => x.classList.toggle('on', k === i));
+  document.querySelectorAll('.Bc .dots i').forEach((x, k) => x.classList.toggle('on', k <= i));
+  document.getElementById('bh').textContent = String(i + 1).padStart(2, '0') + ' · ' + ART[i][0];
+  document.getElementById('bp').textContent = ART[i][1];
+}));
+document.querySelectorAll('.C .it button').forEach((bt) => bt.addEventListener('click', () => {
+  const it = bt.parentElement, on = !it.classList.contains('on');
+  document.querySelectorAll('.C .it').forEach((x) => { x.classList.remove('on'); x.querySelector('button').setAttribute('aria-expanded', 'false'); });
+  it.classList.toggle('on', on); bt.setAttribute('aria-expanded', String(on));
+}));
+const ov = document.getElementById('ov');
+document.querySelectorAll('[data-open]').forEach((s) => { s.addEventListener('click', () => ov.hidden = false); s.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ov.hidden = false; } }); });
+ov.addEventListener('click', (e) => { if (e.target.closest('[data-close]') || e.target === ov) ov.hidden = true; });
+addEventListener('keydown', (e) => { if (e.key === 'Escape') ov.hidden = true; });
+</script>
+</body>
+</html>
